@@ -1,0 +1,179 @@
+:root {
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-grayish-blue-opacity: hsl(217, 19%, 70%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    /* ### Neutral */
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 500;
+    Font-size: 13px;
+    background-color: var(--Light-grayish-blue);
+}
+
+.container {
+    padding: 50px 50px;
+    display: grid;
+    grid-template-areas:
+        'box1 box1  box1 box2 box3'
+        'box4 box5 box5  box5 box3';
+    gap: 2rem;
+}
+
+@media (max-width:1200px) {
+    .container {
+        grid-template-areas:
+            'box1 box2'
+            'box4 box5'
+            'box3 box3';
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        padding: 50px 20px;
+        grid-template-areas:
+            'box1 box1'
+            'box2 box2'
+            'box4 box4'
+            'box5 box5'
+            'box3 box3';
+
+    }
+}
+
+
+.box {
+
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 10px 1px hsla(0, 0%, 0%, 0.076);
+}
+
+.box1 {
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 350px 10px;
+    grid-area: box1;
+    background-color: var(--Moderate-violet);
+}
+
+@media (max-width:375px) {
+    .box1 {
+        background-position: 200px 0px;
+    }
+}
+
+.box2 {
+    grid-area: box2;
+    background-color: var(--Very-dark-grayish-blue);
+}
+
+.box3 {
+    grid-area: box3;
+    background-color: var(--White);
+}
+
+.box4 {
+    grid-area: box4;
+    background-color: var(--White);
+
+}
+
+.box5 {
+    grid-area: box5;
+    background-color: var(--Very-dark-blackish-blue);
+}
+
+.box_header {
+    display: flex;
+    gap: 1rem;
+    z-index: 1;
+}
+
+.box_header .box_img {
+    border: 1px solid white;
+    border-radius: 5rem;
+    max-width: 40px;
+}
+
+.box_user .name {
+    line-height: 1.5;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+
+}
+
+.box_user .statue {
+    color: rgb(255, 255, 255, 50%);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.box3 .name,
+.box4 .name {
+    color: var(--Very-dark-grayish-blue) !important;
+}
+
+.box3 .statue,
+.box4 .statue {
+    color: var(--Very-dark-grayish-blue-opacity) !important;
+}
+
+.content_text {
+    font-weight: 600;
+    color: white;
+    margin: 1.3rem 0;
+    font-size: 1.4rem;
+
+}
+
+.content_subtext {
+    color: rgb(255, 255, 255, 70%);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+@media (max-width:300px) {
+    .box_header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box_img {
+        max-width: 70px !important;
+    }
+
+    .box_content {
+        text-align: center;
+        z-index: -1;
+    }
+
+    .content_text {
+        font-size: 1rem;
+    }
+}
+
+.box3 .content_text,
+.box4 .content_text {
+    color: var(--Very-dark-grayish-blue) !important;
+}
+
+.box3 .content_subtext,
+.box4 .content_subtext {
+    color: var(--Very-dark-grayish-blue-opacity) !important;
+}
